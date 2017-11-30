@@ -28,6 +28,7 @@ const habitSchema = new Schema({
   occurrences: [occurrenceSchema], // Embeded subdocument.
 });
 
+
 const userSchema = new Schema({
   username: { type: String, unique: true },
   password: String,
