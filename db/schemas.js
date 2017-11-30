@@ -12,6 +12,7 @@ const Schema = mongoose.Schema;
 // especially for the users<-->habit relationship.
 // As is, habits is an array, which complicates lookup.
 
+// Schema for users.
 const occurrenceSchema = new Schema({
   timestamp: Date,
   value: Number, // Number of units, e.g., 3 cigars.
@@ -27,12 +28,12 @@ const habitSchema = new Schema({
   occurrences: [occurrenceSchema], // Embeded subdocument.
 });
 
-// Schema for users.
 const userSchema = new Schema({
   username: { type: String, unique: true },
   password: String,
   habitList: Array, // Used to populate dropdowns, e.g., ['smoking', 'running']
   habits: [habitSchema], // Embeded subdocument.
 });
+
 
 module.exports = mongoose.model('User', userSchema);
