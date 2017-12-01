@@ -10,6 +10,7 @@ import EventCreator from './EventCreator.jsx';
 import EventSelector from './EventSelector.jsx';
 import LoggerCalendar from './LoggerCalendar.jsx';
 import Toolbar from './Toolbar.jsx';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
