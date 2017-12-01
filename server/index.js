@@ -12,7 +12,6 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../webpack.config');
 
-
 const compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
@@ -68,6 +67,14 @@ app.post('/signup', (req, res) => {
     }
   });
 });
+
+// GET FAUX DATA
+
+app.get('/faux', (req, res) => {
+
+})
+
+
 
 app.post('/login', (req, res) => {
   // Expects a JSON from the client.
