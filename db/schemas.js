@@ -19,7 +19,7 @@ const occurrenceSchema = new Schema({
 
 const habitSchema = new Schema({
   habit: {type: String, unique: true}, // e.g., smoking.
-  limit: Number, // e.g., 5 (per timeframe)
+  goal: Number, // e.g., 5 (per timeframe)
   unit: String, // e.g., cigars
   deadline: Date,
   timeframe: String, // e.g., day / week
@@ -30,6 +30,7 @@ const habitSchema = new Schema({
 const userSchema = new Schema({
   username: {type: String, unique: true},
   password: String,
+  email: String,
   habitList: Array, // Used to populate dropdowns, e.g., ['smoking', 'running']
   habits: [habitSchema],  // Embeded subdocument.
 });
