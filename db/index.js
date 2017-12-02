@@ -40,6 +40,7 @@ const signup = (user, cb) => {
         const newUser = new User({
           username: user.username,
           password: hash,
+          email: user.email,
         });
         newUser.save((err, newUserEntry) => {
           if (err) {
@@ -139,7 +140,7 @@ const createHabit = (habitData, cb) => {
       userEntry.habitList.push(habitData.habit);
       userEntry.habits.push({
         habit: habitData.habit,
-        limit: habitData.limit,
+        goal: habitData.goal,
         unit: habitData.unit,
         timeframe: habitData.timeframe,
         deadline: habitData.deadline,
