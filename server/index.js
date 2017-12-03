@@ -47,6 +47,7 @@ const checkLoginAuthStatus = (req, res, next) => {
   const isLoggedIn = req.session ? !!req.session.user : false;
   const isActualUser = req.session.user === req.params.username;
   if (isLoggedIn && isActualUser) {
+    console.log('req.session.user: ', req.session.user)
     next();
   } else {
 
@@ -68,6 +69,7 @@ app.post('/signup', (req, res) => {
       res.send(null);
     }
   });
+
 });
 
 // GET FAUX DATA
