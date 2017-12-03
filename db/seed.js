@@ -29,10 +29,11 @@ fs.readFile(path.join(`${__dirname}/data.json`), 'utf8', (err, data) => {
           let habitData = {
             username: dummyUser.username,
             habit: dummyHabit.habit,
-            goal: dummyHabit.goal,
+            limit: dummyHabit.limit,
             unit: dummyHabit.unit,
             timeframe: dummyHabit.timeframe,
             deadline: dummyHabit.deadline,
+            messageSent: dummyHabit.messageSent,
           };
 
           db.createHabit(habitData, (confirmList)=> {
