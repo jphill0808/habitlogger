@@ -30,7 +30,7 @@ const habitSchema = new Schema({
 const userSchema = new Schema({
   username: {type: String, unique: true},
   password: String,
-  email: String,
+  phoneNumb: String,
   habitList: Array, // Used to populate dropdowns, e.g., ['smoking', 'running']
   habits: [habitSchema],  // Embeded subdocument.
 });

@@ -17,7 +17,7 @@ fs.readFile(path.join(`${__dirname}/data.json`), 'utf8', (err, data) => {
       let userData = {
         username: dummyUser.username,
         password: dummyUser.password,
-        email: dummyUser.email,
+        phoneNumb: dummyUser.phoneNumb,
       };
 
       console.log('TESTING SIGNUP.');

@@ -40,7 +40,7 @@ const signup = (user, cb) => {
         const newUser = new User({
           username: user.username,
           password: hash,
-          email: user.email,
+          phoneNumb: user.phoneNumb,
         });
         newUser.save((err, newUserEntry) => {
           if (err) {
