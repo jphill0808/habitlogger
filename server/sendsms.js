@@ -1,12 +1,11 @@
 require('dotenv').config();
-const accountSid = process.env.ACCOUNT_SID;
-const authToken = process.env.AUTH_TOKEN;
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 
 const client = require('twilio')(accountSid, authToken);
-
-const sendMessage = () => {
+const sendMessage = (userPhoneNumber) => {
   client.messages.create({
-  to: '+16784295786',
+  to: `+1{userPhoneNumber}`,
   from: process.env.FROM_PHONE_NUMBER,
   body: 'yo live long and prosper css master'
   })
@@ -18,11 +17,15 @@ const sendMessage = () => {
   })
 }
 
+const testFunc = (hi) =>{
+  console.log('testFunc parameter: ', hi);
+}
+
 let today = new Date();
 let time = today.getHours();
 console.log(time);
 
-
 module.exports = {
-  sendMessage: sendMessage
+  sendMessage: sendMessage,
+  testFunc: testFunc
 }
