@@ -60,6 +60,7 @@ class App extends React.Component {
         if (res.data) {
           this.setState({ username: res.data });
           this.getUserData();
+          console.log('state info: ', this.state)
         } else {
           alert('Incorrect Credentials');
         }
