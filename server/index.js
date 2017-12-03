@@ -56,6 +56,29 @@ const checkLoginAuthStatus = (req, res, next) => {
 };
 
 // ROUTING
+db.getInfo((list) => {
+  console.log('list: ', list)
+  /*
+  [
+    { username: 'Stone',
+      habit: 'rolling',
+      phoneNumb: '7033805017',
+      deadline: 2017-12-31T14:38:15.074Z,
+      messageSent: false },
+    { username: 'Stone',
+      habit: 'Video Games',
+      phoneNumb: '7033805017',
+      deadline: 2017-12-31T14:38:15.074Z,
+      messageSent: false },
+    { username: 'Stone',
+      habit: 'smoking',
+      phoneNumb: '7033805017',
+      deadline: 2017-12-31T14:38:15.074Z,
+      messageSent: false }
+  ]
+  */
+
+})
 
 app.post('/signup', (req, res) => {
   // Expects a JSON from the client.
