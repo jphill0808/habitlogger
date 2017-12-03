@@ -9,3 +9,4 @@
 .floo
 .flooignore
 /server/.env
+.env
