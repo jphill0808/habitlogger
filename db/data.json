@@ -2,7 +2,7 @@
   {
     "username":"Stone",
     "password":"sandstone",
-    "email": "dummyEmailAddress@gmail.com",
+    "phoneNumb": "1234567890",
     "habitList":["rolling","smoking","Video Games"],
     "habits":[
       {
@@ -82,7 +82,7 @@
   {
     "username":"Sand",
     "password":"zen",
-    "email": "dummyEmailAddress2@gmail.com",
+    "phoneNumb": "1234567890",
     "habitList":["zen","studying","reading"],
     "habits":[
       {
