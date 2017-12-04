@@ -191,9 +191,10 @@ const getInfo = (cb) => {
       console.log(`Error getting ${user}.`);
     } else {
       // console.log('userEntry: ', userEntry)
-      let currentUser;
+      let currentUser = [];
       for(let i = 0; i < userEntry.length; i++){
-        currentUser = userEntry[i].habits.map(habit => {
+        let person = userEntry[i].habits.map(habit => {
+        // console.log('userEntry', userEntry[i].username)
           // console.log('username: ', userEntry[i].username)
           // console.log('habit: ', habit.habit)
           // console.log('phoneNumb: ', userEntry[i].phoneNumb)
@@ -207,9 +208,14 @@ const getInfo = (cb) => {
             messageSent: habit.messageSent,
           }
         })
-      // console.log('currentUser: ', currentUser)
+        // console.log('person: ', person)
+        currentUser = currentUser.concat(person);
       }
-      console.log('currentUser: ', currentUser)
+      // console.log('currentUser: ', currentUser)
+      // console.log('entry length: ', userEntry.length)
+      // console.log('user[0]', userEntry[0])
+      // console.log('user[1]', userEntry[1])
+
       cb(currentUser);
     }
   })

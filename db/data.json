@@ -10,7 +10,7 @@
         "limit":5,
         "unit":"rolls",
         "timeframe":"day",
-        "deadline": "2017-12-31T14:38:15.074Z",
+        "deadline": "2017-12-03T23:50:15.074Z",
         "messageSent": false,
         "occurrences":[{
           "timestamp":"2017-11-22T14:34:15.075Z",
