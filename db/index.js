@@ -185,6 +185,20 @@ const logOccurrence = (logData, cb) => {
   });
 };
 
+const updateMessage = (habit) => {
+  User.update({'habits.habit': habit}, {'$set': {
+    'habits.$.messageSent': false
+    }
+  }, (err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('updated!')
+    };
+  })
+}
+// updateMessage('rolling');
+
 const getInfo = (cb) => {
   User.find({}, (err, userEntry) => {
     if(err){
@@ -227,11 +241,23 @@ const getInfo = (cb) => {
 // })
 
 // EXPORTS
-module.exports.signup = signup;
-module.exports.verifyLogin = verifyLogin;
-module.exports.getUserHabits = getUserHabits;
-module.exports.getHabitData = getHabitData;
-module.exports.createHabit = createHabit;
-module.exports.logOccurrence = logOccurrence;
-module.exports.getGraphData = getGraphData;
-module.exports.getInfo = getInfo;
+// module.exports.signup = signup;
+// module.exports.verifyLogin = verifyLogin;
+// module.exports.getUserHabits = getUserHabits;
+// module.exports.getHabitData = getHabitData;
+// module.exports.createHabit = createHabit;
+// module.exports.logOccurrence = logOccurrence;
+// module.exports.updateMessage = updateMessage;
+// module.exports.getInfo = getInfo;
+
+module.exports = {
+  signup,
+  verifyLogin,
+  getUserHabits,
+  getHabitData,
+  createHabit,
+  logOccurrence,
+  updateMessage,
+  getGraphData,
+  getInfo,
+}
