@@ -66,7 +66,7 @@ class Chart extends React.Component {
     let padding = 25;
     let margin = {top: 40, right: 40, bottom: 40, left: 40},
       width = this.state.width - margin.left - margin.right,
-      height = this.state.height - margin.top - margin.bottom;
+      height = this.state.height - margin.top - margin.bottom
 
     let x = d3.scaleLinear() //scaleBand
       .rangeRound([0, width])
