@@ -3,29 +3,27 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const db = require('../db/index.js');
-
 const PORT = process.env.PORT || 3000;
-
 const session = require('express-session');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../webpack.config');
-
-const sendMessage = require('./sendsms.js').sendMessage;
-
 const compiler = webpack(config);
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath,
-  noInfo: true,
-  hot: true,
-  historyApiFallback: true,
-  stats: {
-    colors: true,
-  },
-}));
-app.use(webpackHotMiddleware(compiler));
+const sendMessageCron = require('./cronMessage.js').sendMessageCron;
 
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    noInfo: true,
+    hot: true,
+    historyApiFallback: true,
+    stats: {
+      colors: true,
+    },
+  })
+);
+app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static(`${__dirname}/../client/public/`));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -56,30 +54,6 @@ const checkLoginAuthStatus = (req, res, next) => {
 };
 
 // ROUTING
-db.getInfo((list) => {
-  console.log('list: ', list)
-  /*
-  [
-    { username: 'Stone',
-      habit: 'rolling',
-      phoneNumb: '7033805017',
-      deadline: 2017-12-31T14:38:15.074Z,
-      messageSent: false },
-    { username: 'Stone',
-      habit: 'Video Games',
-      phoneNumb: '7033805017',
-      deadline: 2017-12-31T14:38:15.074Z,
-      messageSent: false },
-    { username: 'Stone',
-      habit: 'smoking',
-      phoneNumb: '7033805017',
-      deadline: 2017-12-31T14:38:15.074Z,
-      messageSent: false }
-  ]
-  */
-
-})
-
 app.post('/signup', (req, res) => {
   // Expects a JSON from the client.
   // {username:'stone', password:'sand'}
@@ -100,8 +74,6 @@ app.post('/signup', (req, res) => {
 app.get('/faux', (req, res) => {
 
 })
-
-
 
 app.post('/login', (req, res) => {
   // Expects a JSON from the client.
@@ -173,6 +145,8 @@ app.get('/graphData', (req, res) => {
     res.send(graphData);
   });
 })
+
+sendMessageCron.start();
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
