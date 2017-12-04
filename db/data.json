@@ -10,7 +10,7 @@
         "limit":5,
         "unit":"rolls",
         "timeframe":"day",
-        "deadline": "2017-12-03T23:50:15.074Z",
+        "deadline": "2017-12-04T07:30:15.074Z",
         "messageSent": false,
         "occurrences":[{
           "timestamp":"2017-11-22T14:34:15.075Z",
@@ -86,8 +86,21 @@
     "username":"Sand",
     "password":"zen",
     "phoneNumb": "7033805017",
-    "habitList":["zen","studying","reading"],
+    "habitList":["rolling","zen","studying","reading"],
     "habits":[
+      {
+        "habit":"rolling",
+        "limit":5,
+        "unit":"rolls",
+        "timeframe":"day",
+        "deadline": "2020-12-04T07:30:15.074Z",
+        "messageSent": false,
+        "occurrences":[{
+          "timestamp":"2017-11-22T14:34:15.075Z",
+          "value":"1",
+          "notes": "had a great day, sunny outside."
+        }]
+      },
       {
         "habit":"zen",
         "limit":3,
