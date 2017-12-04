@@ -8,5 +8,5 @@
 
 .floo
 .flooignore
-/server/.env
+./server/.env
 .env

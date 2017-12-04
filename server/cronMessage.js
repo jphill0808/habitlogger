@@ -11,10 +11,10 @@ const compareTimeAndSend = (user, now, cb) => {
 }
 
 const sendMessageCron = new CronJob({
-  cronTime: '* * * * * *',
+  cronTime: '0,10 * * * * *',
   onTick: function(){
+    console.log('running now!!')
     db.getInfo((list) => {
-      console.log('data:::::::: ', list)
       list.forEach((user) => {
         const deadline = user.deadline;
         let now = Date.now();
@@ -31,6 +31,6 @@ const sendMessageCron = new CronJob({
 
 // sendMessageCron.start();
 
-exports.module = {
+module.exports = {
   sendMessageCron,
 }
