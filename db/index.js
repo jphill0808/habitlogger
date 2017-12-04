@@ -185,19 +185,26 @@ const logOccurrence = (logData, cb) => {
   });
 };
 
-const updateMessage = (habit) => {
-  User.update({'habits.habit': habit}, {'$set': {
-    'habits.$.messageSent': false
+const updateMessage = (habit, username) => {
+  User.update({'username': username, 'habits.habit': habit}, {'$set': {
+    'habits.$.messageSent': true
     }
   }, (err) => {
     if (err) {
       console.log(err)
     } else {
       console.log('updated!')
+      User.find({}, (err, userEntry) => {
+        if(err) {
+          console.log(err);
+        } else {
+          // console.log('HERE IS THE userEntry>>>>>>>>>>', userEntry[0].habits)
+        }
+      })
     };
   })
 }
-// updateMessage('rolling');
+// updateMessage('rolling', 'Sand');
 
 const getInfo = (cb) => {
   User.find({}, (err, userEntry) => {
