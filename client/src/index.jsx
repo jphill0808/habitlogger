@@ -71,10 +71,12 @@ class App extends React.Component {
   }
 
   signup(username, password, phoneNumb) {
+    console.log('PHONENUMB>>>>>>>>>>>>>>>>>>>', phoneNumb)
+    const phone = JSON.stringify(phoneNumb)
     if (username.length < 4 || password.length < 4) {
       alert('Username and password must be at least 4 characters.');
     } else {
-      axios.post('/signup', {username: username, password: password, phoneNumb: phoneNumb})
+      axios.post('/signup', {username: username, password: password, phoneNumb: phone})
         .then((res) => {
           if (res.data) {
             this.setState({

@@ -35,63 +35,6 @@ class Login extends React.Component {
       <div className="login-signup login-signup-subgrid">
         <div className="title">
           <h1>Login or Signup to start logging</h1>
-          <div className="login col-md-4">
-            <h4>Log In</h4>
-            <TextField
-              id="userLogin"
-              hintText="Enter Username"
-              floatingLabelText="Username"
-              onKeyUp={this.handleTextFieldChange}
-             />
-             <br />
-            <TextField
-              id="passyLogin"
-              type="password"
-              hintText="Enter Password"
-              floatingLabelText="Password"
-              onKeyUp={this.handleTextFieldChange}
-            />
-            <br />
-            <RaisedButton
-              label="LOGIN"
-              primary={true}
-              onClick={this.props.login.bind(this, this.state.userLogin, this.state.passyLogin)}
-            />
-             <br />
-          </div>
-          <div className="col-md-4 icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" />
-          </div>
-          <div className="signup col-md-4">
-            <h4>Sign Up</h4>
-            <TextField
-              id="userSignUp"
-              hintText="Enter Username"
-              floatingLabelText="Username"
-              onKeyUp={this.handleTextFieldChange}
-            />
-            <br />
-            <TextField
-              id="passySignUp"
-              type="password"
-              hintText="Enter Password"
-              floatingLabelText="Password"
-              onKeyUp={this.handleTextFieldChange}
-            />
-            <br />
-            <TextField
-              id="phoneNumb"
-              hintText="Without spaces e.g. 1234567890"
-              floatingLabelText="Phone Number"
-              onKeyUp={this.handleTextFieldChange}
-            />
-            <br />
-            <RaisedButton
-              label="SIGNUP"
-              primary={true}
-              onClick={this.props.signup.bind(this, this.state.userSignUp, this.state.passySignUp, this.state.phoneNumb)}
-            />
-          </div>
         </div>
 
         <div className="login-box">
@@ -140,10 +83,17 @@ class Login extends React.Component {
             onKeyUp={this.handleTextFieldChange}
           />
           <br />
+          <TextField
+              id="phoneNumb"
+              hintText="Without spaces e.g. 1234567890"
+              floatingLabelText="Phone Number"
+              onKeyUp={this.handleTextFieldChange}
+            />
+          <br />
           <RaisedButton
             label="SIGNUP"
             primary={true}
-            onClick={this.props.signup.bind(this, this.state.userSignUp, this.state.passySignUp)}
+            onClick={this.props.signup.bind(this, this.state.userSignUp, this.state.passySignUp, this.state.phoneNumb)}
           />
         </div>
 

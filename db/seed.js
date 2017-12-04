@@ -35,7 +35,7 @@ fs.readFile(path.join(`${__dirname}/data.json`), 'utf8', (err, data) => {
             deadline: dummyHabit.deadline,
             messageSent: dummyHabit.messageSent,
           };
-
+          // console.log('habitData: ', habitData)
           db.createHabit(habitData, (confirmList)=> {
             console.log(`${confirmUser}'s habit list is now ${confirmList}.`);
 

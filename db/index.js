@@ -137,6 +137,7 @@ const createHabit = (habitData, cb) => {
     if (err) {
       console.error(`Error getting ${habitData.username}.`);
     } else {
+      console.log('userEntry: ', userEntry)
       userEntry.habitList.push(habitData.habit);
       userEntry.habits.push({
         habit: habitData.habit,
