@@ -180,7 +180,7 @@ class App extends React.Component {
   }
 
   //used by EventCreator to add habits to user's list of habits in database
-  createHabit(name, unit, limit, timeframe, deadline) {
+  createHabit(name, unit, limit, timeframe, deadline, messageSent) {
     let habit = {
       username: this.state.username,
       habit: name,
@@ -188,6 +188,7 @@ class App extends React.Component {
       unit: unit,
       timeframe: timeframe,
       deadline: deadline,
+      messageSent: messageSent,
     };
     axios
       .post(`/api/${this.state.username}/habit`, habit)

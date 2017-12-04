@@ -1,16 +1,16 @@
 [
   {
-    "username":"Stone",
-    "password":"sandstone",
-    "phoneNumb": "7033805017",
-    "habitList":["rolling","smoking","Video Games"],
+    "username":"francis",
+    "password":"francis",
+    "phoneNumb": "5103328722",
+    "habitList":["rolling","rock climbing","Video Games"],
     "habits":[
       {
         "habit":"rolling",
         "limit":5,
         "unit":"rolls",
         "timeframe":"day",
-        "deadline": "2017-12-04T07:30:15.074Z",
+        "deadline": "2017-12-31T07:30:15.074Z",
         "messageSent": false,
         "occurrences":[{
           "timestamp":"2017-11-22T14:34:15.075Z",
@@ -19,11 +19,11 @@
         }]
       },
       {
-        "habit":"smoking",
+        "habit":"rock climbing",
         "limit":5,
         "unit":"packs",
         "timeframe":"day",
-        "deadline": "2017-12-31T14:38:15.074Z",
+        "deadline": "2017-12-05T07:00:15.074Z",
         "messageSent": false,
         "occurrences":
         [
